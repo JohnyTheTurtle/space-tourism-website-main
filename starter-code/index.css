@@ -1,0 +1,706 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&family=Bellefair&display=swap');
+:root {
+    /* colors: */
+    --paragrath: rgb(210, 216, 249);
+    --title: rgb(255, 255, 255);
+    --black: rgb(11, 13, 23);
+    --background: rgb(242, 242, 242);
+    --navbar-background: rgba(255, 255, 255, 0.04);
+    --explore-shadow-box: rgba(255, 255, 255, 0.1);
+    --space-line: rgb(210, 216, 249, 0.2);
+
+    /* sizes */
+    --width: 375px;
+    --height: 667px;
+    --subsite-picture-width: 378px;
+    --crew-img-height: 222px;
+    --logosize: 40px;
+    --explorebuttonsize: 150px;
+    --planetsize: 170px;
+    --planettypes: 237.5px;
+    --crewtechbuttonsize: 40px;
+    /* fontsizes */
+    --fontsize-h2: 16px;
+    --fontsize-h1: 80px;
+    --fontsize-p: 15px;
+    --fontsize-button: 20px;
+    --fontsize-planetnav: 14px;  
+    --fontsize-planetname: 56px;
+    --fontsize-planetdistance:28px;
+    --fontsize-crewname: 24px;
+    --fontsize-crewrole: 16px;
+    --fontsize-techbuttons: 20px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* ///////////////////////////////////////////
+FONT FAMILY GROUPS */
+.wrapper ul, .h2home, .subsiteTitle, .techrole, .planetTypes>*, .DistanceTitle, .estTravelTimeTiltle{
+    font-family: "Barlow Condensed";   
+}
+.h1home, .explore, .planetName, .distance, .estTravelTime, .crewmemberrole, .crewmembername, .techtypes div, .techname{
+    font-family: "Bellefair";   
+}
+.phome, .planetDescription, .crewmemberbio, .techdescription{
+    font-family: "Barlow";   
+}
+/* ///////////////////////////////////////////
+COLOR GROUPS */
+.h2home, .phome, .planetTypes>*, .DistanceTitle, .estTravelTimeTiltle, .planetDescription, .crewmemberbio, .techrole, .techdescription{
+    color: var(--paragrath);
+}
+.wrapper ul, .h1home, .crewmembers div, .techtypes div, .explore, .subsiteTitle, .techrole, .planetName, .distance, .estTravelTime, .crewmemberrole, .crewmembername, .techname{
+    color: var(--title);
+}
+.explore{
+    color: var(--black);
+}
+/* ///////////////////////////////////////////*/
+/* ///////////////////////////////////////////
+TEXT UPPERCASE GROUPS */
+.wrapper ul li, .h2home, .subsiteTitle, .h1home, .explore, .subsiteTitle, .techrole, .planetTypes>*, .DistanceTitle, .estTravelTimeTiltle, .planetName, .distance, .estTravelTime, .crewmemberrole, .crewmembername, .techname{
+    text-transform: uppercase;
+}
+
+/* ///////////////////////////////////////////*/
+/* ///////////////////////////////////////////
+HOVER GROUPS */
+.wrapper ul li:hover, .explore:hover,.navbar button:hover,ul img:hover, .techtypes div:hover, .planetTypes p:hover, .crewmembers div:hover, .crewslide {
+    cursor: pointer;
+}
+.explore:hover{
+    box-shadow: 0 0 0 50px var(--explore-shadow-box);
+    transition: box-shadow 1s;
+}
+.wrapper ul li:hover, .crewslide:hover{
+    box-shadow: 0 0 10px 0 var(--explore-shadow-box);
+    transition: box-shadow 1s;
+}
+.planetTypes p:hover{
+    color: var(--title);
+    transition: color 1s;
+}
+.crewmembers div:hover{
+    background-color: var(--title);
+    opacity: 50%;
+}
+.techtypes div:hover{
+    background-color: var(--title);
+    opacity: 50%;
+    color: var(--black);
+}
+/* ///////////////////////////////////////////*/
+body{
+    background-color: var(--background);
+    font-family: "Barlow Condensed","Bellefair", "Barlow";
+}
+.wrapper{
+    margin: 0 auto;
+    width: var(--width);
+    height: 100%;
+    font-size: var(--fontsize-h2);
+    position: relative;
+    overflow: hidden;
+    background-image: url("./assets/home/background-home-mobile.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    padding: 1.5em;
+}
+.logo{
+    max-width: var(--logosize);
+    max-height: var(--logosize);
+}
+.navbar button img{
+    width: 24px;
+    height: 21px;
+}
+.navbar button{
+    background-color: transparent;
+    border: none;
+}
+.wrapper ul{
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    left: var(--width);
+    top: 0;
+    background: var(--navbar-background);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    list-style-type: none;
+    font-size: var(--fontsize-h2);
+    letter-spacing: 2.7px;
+    line-height: 1.3em;
+    padding: 10em 0 0 1em;
+    width: 16em;
+}
+
+.wrapper ul li{
+    margin: 0 0 1em 0;
+    padding: 0.5em 0 0.5em 0.5em;
+}
+
+.wrapper ul img{
+    position: absolute;
+    width: 19.09px;
+    height: 19.09px;
+    right: 26px;
+    top: 33.95px;
+}
+.wrapper ul li span, .content span{
+    font-weight: 700;
+}
+.content{
+    margin: 0 auto;
+    text-align: center;
+    margin: 0 1.5em 0 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.h2home, .subsiteTitle{
+    width: 100%;
+    text-align: center;
+    font-weight: 400;
+    font-size: var(--fontsize-h2);
+    letter-spacing: 2.7px;
+    padding: 0 0 1em 0;
+    margin-top: 2em;
+    
+}
+.h1home{
+    font-weight: 400;
+    font-size: var(--fontsize-h1);
+    padding: 0 0 10px 0;
+}
+.phome, .planetDescription, .crewmemberbio, .techdescription{
+    font-size: var(--fontsize-p);
+    line-height: 25px;
+    margin-top: 1em;
+    margin-bottom: 2.25em;
+}
+.explorediv{
+    position: relative;
+    top: 4.5em;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8em;
+}
+
+.explore{
+    width: var(--explorebuttonsize);
+    height: var(--explorebuttonsize);
+    border-radius: 50%;
+    border: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--fontsize-button);
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 1.25px;
+}
+
+/* //////////////////////////////////////////////////// */
+/* Styles for subsites */
+.planet{
+    width: var(--planetsize);
+    height: var(--planetsize);
+}
+.subsiteTitle{
+    font-weight: 400;
+    font-size: var(--fontsize-h2);
+    line-height: 25px;
+    margin-top: 0;
+    margin: 0 0 1em 0;
+}
+.subsiteTitle span{
+    opacity: 25%;
+    padding: 0 0.5em 0 0;
+}
+.planetTypes{
+    width: var(--planettypes);
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5em auto 1.5em auto;
+    
+}
+.planetTypes p{
+    padding-bottom: 0.5em;
+}
+.planetTypes>*, .DistanceTitle, .estTravelTimeTiltle{
+    font-size: var(--fontsize-planetnav);
+    font-weight: 400;
+    letter-spacing: 2.36px;
+
+}
+.distancesContainer{
+    border-top: 1px solid var(--space-line);
+    padding-top: 2.25em
+}
+.planetName{
+    font-size: var(--fontsize-planetname);
+    font-weight: 400;
+}
+
+.distance, .estTravelTime{
+    font-size: var(--fontsize-planetdistance);
+    font-weight: 400;
+    padding: 0.5em 0 1em 0;
+}
+#CREW img{
+    max-height: var(--crew-img-height);
+}
+.crewmembers{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2em 7.5em 2em 7.5em;
+}
+.crewmembers div{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: var(--space-line);
+}
+.crewmemberdiv{
+    box-shadow: 0 2px 0 0 var(--space-line);
+    font-size: var(--fontsize-h2);
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.crewmembername, .techname{
+    font-size: var(--fontsize-crewname);
+}
+.crewmemberrole{
+    opacity: 50%;
+    margin-bottom: 0.5em;
+    font-size: var(--fontsize-crewrole);
+}
+.crewslide{
+    width: 50px;
+    height: var(--crew-img-heigh);
+    background: var(--navbar-background);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    font-size: 50px;
+    color: var(--explore-shadow-box);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#CREW:last-child{
+    margin-bottom: 5em;
+}
+#TECHNOLOGY img{
+    width: var(--subsite-picture-width);
+    position: relative;
+    left: -1.5em;
+}
+.techtypes div{
+    height: var(--crewtechbuttonsize);
+    width: var(--crewtechbuttonsize);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px var(--space-line);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--fontsize-techbuttons);
+}
+.techtypes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2em 5.5em 1.5em 5.5em;
+}
+.techrole{
+    font-weight: 400;
+    font-size: var(--fontsize-h2);
+    line-height: 25px;
+    margin-top: 0;
+    margin: 0 0 0.5em 0;
+    letter-spacing: 1px;
+    color: var(--paragrath);
+}
+.techdescription{
+    font-size: var(--fontsize-p);
+    letter-spacing: 0;
+    
+}
+#TECHNOLOGY:last-child{
+    margin-bottom: 3em;
+}
+.navbarstyler{
+    display: none;
+}
+/* //////////////////////////////////////////////////// */
+
+@media(min-width: 768px){
+    /* fontsizes */
+    :root{  
+            /* sizes */
+        --width: 768px;
+        --height: 667px;
+        --subsite-picture-width: 774px;
+        --crew-img-height: 572px;
+        --logosize: 48px;
+        --explorebuttonsize: 242px;
+        --planetsize: 300px;
+        --planettypes: 285.5px;
+        --crewtechbuttonsize: 58px;
+        /* fontsizes */
+        --fontsize-h2: 20px;
+        --fontsize-h1: 150px;
+        --fontsize-p: 16px;
+        --fontsize-button: 32px;
+        --fontsize-planetnav: 16px;  
+        --fontsize-planetname: 80px;
+        --fontsize-planetdistance: 28px;
+        --fontsize-crewname: 40px;
+        --fontsize-crewrole: 24px;
+        --fontsize-techbuttons: 24px;
+    }
+    .wrapper{
+        padding: 2em;
+        background-image: url("./assets/home/background-home-tablet.jpg");
+    }
+    .content{
+        margin: 0 auto;
+    }
+    .logo{
+        position: relative;
+        top: -2em;
+        left: -2em;
+        max-width: var(--logosize);
+        max-height: var(--logosize);
+    }
+    .explore{
+        width: var(--explorebuttonsize);
+        height: var(--explorebuttonsize);
+    }
+    .content p{
+        line-height: 28px;
+    }
+    .navbar button, .wrapper ul img{
+        display: none;
+    }
+    .wrapper ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        width: 450px;
+        height: 96px;
+        left: 318px;
+        top: 0px;
+        padding: 0;
+        line-height: 0;
+        margin: 0;
+    }
+    .wrapper ul li{
+        display: flex;
+        align-items: center;
+        padding: 2em;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        font-size: 14px;
+        letter-spacing: 2.36px;
+    }
+    .wrapper ul span{
+        display: none;
+    }
+    .subsiteTitle{
+        text-align: left;
+    }
+    .planetDescription{
+        padding: 0 3.5em 0 3.5em;
+    }
+    .distancesContainer {
+        margin: 0 auto;
+        width: 80%;
+        display: grid;
+        grid-template: 
+            "a b"
+            "c d";
+        align-items: end;
+    }
+    .DistanceTitle{
+        grid-area: a;
+    }
+    .distance{
+        grid-area: c;
+    }
+    .estTravelTimeTiltle{
+        grid-area: b;
+    }
+    .estTravelTime{
+        grid-area: d;
+    }
+    #CREW{
+        display: grid;
+        grid-template: 
+        "a"
+        "b"
+        "c"
+        "d"
+        "e"
+        "f";
+    }
+    #CREW .subsiteTitle{ 
+        grid-area: a;
+    }
+    .crewmemberdiv{
+        grid-area: f;
+    }
+    .crewmembers{
+        grid-area: e;
+    }
+    .crewmemberbio{
+        padding: 0 7em 0 7em;
+    }
+    .crewmembers{
+        margin: 0em 15em 2em 15em;
+    }
+    #TECHNOLOGY img{
+        left: -2em;
+    }
+    .techtypes{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 2em 12em 1.5em 12em;
+    }
+    .techrole{
+        padding: 0 0 1em 0;
+    }
+    .techdescription{
+        padding: 1em 8em 0em 8em;
+        line-height: 28px;
+    }
+    .navbarstyler{
+        display: none;
+    }
+}
+@media(min-width: 1440px){
+    /* fontsizes */
+    :root{  
+        /* sizes */
+    --width: 1440px;
+    --height: 667px;
+    --subsite-picture-width: 527px;
+    --crew-img-height: 572px;
+    --logosize: 48px;
+    --explorebuttonsize: 274px;
+    --planetsize: 445px;
+    --planettypes: 285.5px;
+    --crewtechbuttonsize: 80px;
+    /* fontsizes */
+    --fontsize-h2: 28px;
+    --fontsize-h1: 150px;
+    --fontsize-p: 18px;
+    --fontsize-button: 32px;
+    --fontsize-planetnav: 16px;  
+    --fontsize-planetname: 100px;
+    --fontsize-planetdistance: 28px;
+    --fontsize-crewname: 40px;
+    --fontsize-crewrole: 24px;
+    --fontsize-techbuttons: 32px;
+}
+    .wrapper{
+        background-image: url(./assets/home/background-home-desktop.jpg);
+        padding: 2em;
+        height: 900px;
+    }
+    .logo{
+        top: -34px;
+        max-width: var(--logosize);
+        max-height: var(--logosize);
+    }
+    .explore{
+        width: 274px;
+        height: 274px;
+    }
+    .content {
+        text-align: left;
+        position: absolute;
+        width: 450px;
+        height: 382px;
+        left: 165px;
+        top: 387px;
+    }
+    .content>* {
+        text-align: left;
+    }
+
+    .wrapper ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        width: 800px;
+        height: 96px;
+        left: 640px;
+        top: 40px;
+        padding: 0;
+        line-height: 0;
+    }
+    .wrapper ul li{
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .navbar span{
+        display: initial;
+    }
+    .explorediv{
+        position: absolute;
+        left: 851px;
+        top: 110px;
+    }
+    .navbar button, .wrapper ul img{
+        display: none;
+    }
+    #DESTINATION{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 80%;
+        display: grid;
+        grid-template: 
+            "a x"
+            "a b"
+            "c d"
+            "c e"
+            "c f"
+            / 50% 50%;
+        align-items: end;
+        column-gap: 4em;
+    }
+    #DESTINATION .subsiteTitle{
+        grid-area: a;
+        padding-bottom: 2em;
+    }
+    .planetdiv{
+        grid-area: c;
+        padding-left: 2em;
+
+    }
+    .planetTypes{
+        grid-area: b;
+        padding-left: 0;
+        margin-left: 0
+    }
+    .planetName{
+        grid-area: d;
+        padding-left: 0;
+        margin-left: 0
+    }
+    .planetDescription{
+        grid-area: e;
+        padding-left: 0;
+        margin-left: 0
+    }
+    .distancesContainer{
+        grid-area: f;
+        padding-left: 0;
+        margin-left: 0
+    }
+    #CREW{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 80%;
+        display: grid;
+        grid-template: 
+            "a f" 150px
+            "b f" auto
+            "c f" auto
+            "d f" auto 
+            "e f" auto
+            / 50% 50%;
+        align-items: end;
+        column-gap: 1em;
+    }
+    #CREW>*, #TECHNOLOGY>*{
+        padding-left: 0;
+        margin-left: 0
+    }
+    .crewmemberdiv {
+        grid-area: f;
+        width: 563px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+    .subsiteTitle{
+       align-self: start; 
+       padding-top: 0;
+    }
+    #TECHNOLOGY{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 80%;
+        display: grid;
+        grid-template: 
+            "a a b" 150px
+            "c d b" auto
+            "c e b" auto
+            "c f b" auto 
+            / 10% 50% 40%;
+        align-items: end;
+        column-gap: 1em;
+    }
+    #TECHNOLOGY .subsiteTitle{
+        grid-area: a;
+    }
+    .techtype{
+        grid-area: b;
+    }
+    .techtypes{
+        grid-area: c;
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 1em;
+    }
+    .techtypes>*{
+        padding: 0 0 0 0;
+    }
+    #TECHNOLOGY img{
+        width: var(--subsite-picture-width);
+        height: var(--subsite-picture-width);
+        object-fit: fill; 
+        object-position: 50% 0%;
+        position: relative;
+        left: 2.35em;
+    }
+    .navbarstyler{
+        display: block;
+        position: absolute;
+        width: 550px;
+        height: 1px;
+        top: 88px;
+        left: 167px;
+        background-color: var(--space-line);
+    }
+}
