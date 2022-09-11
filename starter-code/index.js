@@ -48,9 +48,6 @@ const showMobileNavBar = function() {
     hideMobileNavBarOnClick()
 }
 
-
-
-
 ////hide navigation bar in mobile mode
 const hideMobileNavBar = function() {
     const navButtonMobile = document.querySelector(".navbar button")
@@ -62,7 +59,6 @@ const hideMobileNavBar = function() {
 const hideMobileNavBarOnClick = function() {
     const myContent = document.querySelector(".content")
     myContent.addEventListener('click', ()=>{
-        console.log("clicked")
         hideMobileNavBar()
     })
 }
@@ -360,11 +356,6 @@ const renderSites = function(inputData, nextsite) {
             hideMobileNavBarOnClick()
     }
 }
-
-
-
-
-
 ////Fetch json data
 const fetchFeed = async() => {
     const reply = await fetch("./data.json")
