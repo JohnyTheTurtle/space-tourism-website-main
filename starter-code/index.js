@@ -45,7 +45,9 @@ const showMobileNavBar = function() {
     navListCloseMobile.addEventListener("click", ()=> {
         hideMobileNavBar()
     })
+    hideMobileNavBarOnClick()
 }
+
 
 
 
@@ -56,8 +58,15 @@ const hideMobileNavBar = function() {
     navButtonMobile.style.display = null
     navListMobile.style.left = null
 }
+////hide navigation bar in mobile mode when content is clicked
+const hideMobileNavBarOnClick = function() {
+    const myContent = document.querySelector(".content")
+    myContent.addEventListener('click', ()=>{
+        console.log("clicked")
+        hideMobileNavBar()
+    })
+}
 ////Find clicked navigation link
-
 const navbarClicked = function() {
     let nextSite
     const navbarLinks = document.querySelectorAll(".wrapper li")
@@ -331,22 +340,25 @@ const renderSites = function(inputData, nextsite) {
             sitename = "destinations"
             renderDestination(inputData[sitename], 0)
             navBarSelectedPage()
+            hideMobileNavBarOnClick()
             break;
         case "2":
             sitename = "crew"
             renderCrew(inputData[sitename], 0)
             navBarSelectedPage()
+            hideMobileNavBarOnClick()
             break;
         case "3":
             sitename = "technology"
             renderTechnology(inputData[sitename], 0)
             navBarSelectedPage()
+            hideMobileNavBarOnClick()
             break;
         default:
             renderHomePage()
             navBarSelectedPage()
+            hideMobileNavBarOnClick()
     }
-    
 }
 
 
@@ -373,19 +385,15 @@ const navBarSelectedPage = function() {
     const underlineStyle = "0 2px 0px white"
     switch(currentSite) {
         case "HOME":
-            console.log(currentSite, "HOME", allNavBars)
             allNavBars[0].style.boxShadow = underlineStyle
             break;
         case "DESTINATION":
-            console.log(currentSite, "DESTINATION")
             allNavBars[1].style.boxShadow = underlineStyle
             break;
         case "CREW":
-            console.log(currentSite, "CREW")
             allNavBars[2].style.boxShadow = underlineStyle
             break;
         case "TECHNOLOGY":
-            console.log(currentSite, "TECHNOLOGY")
             allNavBars[3].style.boxShadow = underlineStyle
             break;
         default:
